@@ -1,0 +1,91 @@
+proxy-groups:
+- name: FINAL
+  type: select
+  proxies:
+    - DIRECT
+    - 节点选择
+    - BWG_US
+  url: http://cp.cloudflare.com/generate_204
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+
+- name: 节点选择
+  type: select
+  proxies:
+    - BWG_US
+    - 香港节点
+    - 狮城节点
+    - 美国节点
+    - 日本节点
+    - 韩国节点
+  url: http://cp.cloudflare.com/generate_204
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+
+- name: ChatGPT
+  type: select
+  proxies:
+    - 节点选择
+    - BWG_US
+    - 美国节点
+    - 狮城节点
+    - 香港节点
+    - 日本节点
+  url: http://cp.cloudflare.com/generate_204
+  img-url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/IconSet/ChatGPT.png
+
+- name: 香港节点
+  type: select
+  proxies:
+    - 香港
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+
+- name: 美国节点
+  type: select
+  proxies:
+    - 美国
+  url: http://cp.cloudflare.com/generate_204
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+
+- name: 狮城节点
+  type: url-test
+  proxies:
+    - 新加坡
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 200
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+
+- name: 台湾节点
+  type: url-test
+  proxies:
+    - 台湾
+  url: http://cp.cloudflare.com/generate_204
+  interval: 600
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+
+- name: 日本节点
+  type: url-test
+  proxies:
+    - 日本
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 200
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+
+- name: 韩国节点
+  type: url-test
+  proxies:
+    - 韩国
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 200
+  img-url: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+
+- name: 其他节点
+  type: url-test
+  proxies:
+    - Anycast
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 200
