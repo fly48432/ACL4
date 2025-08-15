@@ -1,0 +1,529 @@
+proxy-groups:
+  - name: 节点选择
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
+    type: select
+    proxies:
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      - 手动切换
+      - DIRECT
+  - name: 手动切换
+    icon: https://cdn.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
+    include-all: true
+    type: select
+  - name: 电报消息
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
+    type: select
+    proxies:
+      - 节点选择
+      - 狮城节点
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - 手动切换
+      - DIRECT
+  - name: AI套件
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
+    type: select
+    proxies:
+      - 狮城节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - 香港节点
+      - 节点选择
+      - 手动切换
+      - DIRECT
+  - name: OpenAi
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
+    type: select
+    proxies:
+      - 狮城节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - 香港节点
+      - 节点选择
+      - 手动切换
+      - DIRECT
+  - name: 油管视频
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
+    type: select
+    proxies:
+      - 节点选择
+      - 狮城节点
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - 手动切换
+      - DIRECT
+  - name: 巴哈姆特
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
+    type: select
+    proxies:
+      - 台湾节点
+      - 节点选择
+      - 手动切换
+      - DIRECT
+  - name: 哔哩哔哩
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
+    type: select
+    proxies:
+      - 直连
+      - 台湾节点
+      - 香港节点
+  - name: 国外媒体
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png
+    type: select
+    proxies:
+      - 节点选择
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      - 手动切换
+      - DIRECT
+  - name: 谷歌FCM
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
+    type: select
+    proxies:
+      - DIRECT
+      - 自动选择
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 手动切换
+  - name: 微软Bing
+    icon: https://cdn.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/bing.png
+    type: select
+    proxies:
+      - DIRECT
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 手动切换
+  - name: 微软云盘
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/OneDrive.png
+    type: select
+    proxies:
+      - DIRECT
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 手动切换
+  - name: 游戏平台
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
+    type: select
+    proxies:
+      - DIRECT
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 手动切换
+  - name: 广告拦截
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 应用净化
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 漏网之鱼
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
+    type: select
+    proxies:
+      - 节点选择
+      - DIRECT
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      - 手动切换
+
+  - name: 香港节点
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (?i)港|HK|hk|Hong Kong|HongKong|hongkong
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 日本节点
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
+    include-all: true
+    filter: (?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 美国节点
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
+    include-all: true
+    filter: (?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 台湾节点
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png
+    include-all: true
+    filter: (?i)台|新北|彰化|TW|Taiwan
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 狮城节点
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
+    include-all: true
+    filter: (?i)新加坡|坡|狮城|SG|Singapore
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 韩国节点
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
+    include-all: true
+    filter: (?i)KR|Korea|KOR|首尔|韩|韓
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 奈飞节点
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
+    include-all: true
+    filter: (?i)NF|奈飞|解锁|Netflix|NETFLIX|Media
+    type: select
+  - name: GLOBAL
+    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png
+    include-all: true
+    type: url-test
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 节点选择
+      - 手动切换
+      - 电报消息
+      - OpenAi
+      - 油管视频
+      - 奈飞视频
+      - 巴哈姆特
+      - 哔哩哔哩
+      - 谷歌FCM
+      - 微软Bing
+      - 微软云盘
+      - 游戏平台
+      - 广告拦截
+      - 应用净化
+      - 漏网之鱼
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 奈飞节点
+
+rule-providers:
+  # 本地/局域网地址
+  LocalAreaNetwork:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  # AI
+  AISuite:
+    url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/AISuite.list
+    path: ./ruleset/AISuite.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  # OpenAI
+  OpenAi:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./ruleset/OpenAi.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+# Unbreak 白名单 不应该被广告链接的网站
+  UnBan:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/UnBan.list
+    path: ./ruleset/UnBan.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  # 本碎片只包含常见广告关键字、广告联盟。无副作用，放心使用
+  BanAD:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/BanAD.list
+    path: ./ruleset/BanAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  AdBlock:
+    url: https://cdn.jsdelivr.net/gh/celin1286/ACL4SSR@main/Ruleset/AdBlock.list
+    path: ./ruleset/AdBlock.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  # 包含常用应用的各种去广告规则。
+  # 可能有轻微副作用，可放心使用。（如果网站功能和广告冲突，会删掉去广告规则）
+  BanProgramAD:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/BanProgramAD.list
+    path: ./ruleset/BanProgramAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  # 某些影视/动漫 APP 广告拦截规则
+  BanProgramAD1:
+    url: https://cdn.jsdelivr.net/gh/zsokami/ACL4SSR@main/BanProgramAD1.list
+    path: ./ruleset/BanProgramAD1.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Google:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml
+    path: ./ruleset/Google.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  YouTube:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml
+    path: ./ruleset/YouTube.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  YouTubeMusic:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTubeMusic.yaml
+    path: ./ruleset/YouTubeMusic.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Bing:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Bing.list
+    path: ./ruleset/Bing.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  OneDrive:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml
+    path: ./ruleset/OneDrive.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  iCloud:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/iCloud/iCloud.yaml
+    path: ./ruleset/iCloud.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Telegram:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml
+    path: ./ruleset/Telegram.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Facebook:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Facebook/Facebook.list
+    path: ./ruleset/Facebook.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Twitter:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Twitter/Twitter.list
+    path: ./ruleset/Twitter.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Spotify:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Spotify/Spotify.list
+    path: ./ruleset/Spotify.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  TikTok:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/TikTok/TikTok.list
+    path: ./ruleset/TikTok.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Wikipedia:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Wikipedia/Wikipedia.list
+    path: ./ruleset/Wikipedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Epic:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Epic.list
+    path: ./ruleset/Epic.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Origin:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Origin.list
+    path: ./ruleset/Origin.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Steam:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
+    path: ./ruleset/Steam.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  SteamCN:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SteamCN/SteamCN.yaml
+    path: ./ruleset/SteamCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Blizzard:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Blizzard/Blizzard.yaml
+    path: ./ruleset/Blizzard.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Nintendo:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Nintendo/Nintendo.yaml
+    path: ./ruleset/Nintendo.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bahamut:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Bahamut/Bahamut.yaml
+    path: ./ruleset/Bahamut.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  # bilibili 港澳台番剧
+  BilibiliHMT:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/BilibiliHMT.list
+    path: ./ruleset/BilibiliHMT.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bilibili:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bilibili.list
+    path: ./ruleset/Bilibili.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaCompanyIp:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaCompanyIp.list
+    path: ./ruleset/ChinaCompanyIp.list
+    behavior: ipcidr
+    interval: 86400
+    format: text
+    type: http
+  Download:
+    url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Download.list
+    path: ./ruleset/Download.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Docker:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Docker/Docker.list
+    path: ./ruleset/Docker.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Github:
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/GitHub/GitHub.list
+    path: ./ruleset/Github.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+
+rules:
+  - "RULE-SET,LocalAreaNetwork,DIRECT"
+  - "RULE-SET,UnBan,DIRECT"
+  - "RULE-SET,iCloud,DIRECT"
+  - "RULE-SET,Spotify,DIRECT"
+  - "RULE-SET,BanAD,广告拦截"
+  - "RULE-SET,AdBlock,广告拦截"
+  - "RULE-SET,AISuite,AI套件"
+  - "RULE-SET,OpenAi,OpenAi"
+  - "RULE-SET,BanProgramAD,应用净化"
+  - "RULE-SET,BanProgramAD1,应用净化"
+  - "RULE-SET,Google,谷歌FCM"
+  - "RULE-SET,GoogleCN,DIRECT"
+  - "RULE-SET,SteamCN,DIRECT"
+  - "RULE-SET,Telegram,电报消息"
+  - "RULE-SET,Facebook,电报消息"
+  - "RULE-SET,TikTok,美国节点"
+  - "RULE-SET,Wikipedia,节点选择"
+  - "RULE-SET,Docker,节点选择"
+  - "RULE-SET,Github,节点选择"
+  - "RULE-SET,Bing,微软Bing"
+  - "RULE-SET,OneDrive,微软云盘"
+  - "RULE-SET,Epic,游戏平台"
+  - "RULE-SET,Origin,游戏平台"
+  - "RULE-SET,Sony,游戏平台"
+  - "RULE-SET,Steam,游戏平台"
+  - "RULE-SET,Nintendo,游戏平台"
+  - "RULE-SET,YouTube,油管视频"
+  - "RULE-SET,YouTubeMusic,油管视频"
+  - "RULE-SET,Bahamut,巴哈姆特"
+  - "RULE-SET,BilibiliHMT,哔哩哔哩"
+  - "RULE-SET,Bilibili,哔哩哔哩"
+  - "RULE-SET,ProxyMedia.list,国外媒体"
+  - "RULE-SET,ChinaCompanyIp,DIRECT"
+  - "RULE-SET,Download,DIRECT"
+  - "GEOIP,CN,DIRECT"
+  - "MATCH,DIRECT"
