@@ -1,0 +1,46 @@
+payload:
+# Twitch
+  - DOMAIN-SUFFIX,ext-twitch.tv
+  - DOMAIN-SUFFIX,jtvnw.net
+  - DOMAIN-SUFFIX,live-video.net
+  - DOMAIN-SUFFIX,ttvnw.net
+  - DOMAIN-SUFFIX,twitch-ext.rootonline.de
+  - DOMAIN-SUFFIX,twitch.tv
+  - DOMAIN-SUFFIX,twitchcdn.net
+  - DOMAIN-SUFFIX,twitchsvc.net
+  - DOMAIN-KEYWORD,ttvnw
+  - IP-CIDR,103.53.48.0/23
+  - IP-CIDR,185.42.204.0/22
+  - IP-CIDR,192.108.239.0/24
+  - IP-CIDR,192.16.64.0/21
+  - IP-CIDR,199.9.248.0/21
+  - IP-CIDR,23.160.0.0/24
+  - IP-CIDR,45.113.128.0/22
+  - IP-CIDR,52.223.192.0/20
+  - IP-CIDR,52.223.208.0/21
+  - IP-CIDR,52.223.224.0/19
+  - IP-CIDR,99.181.64.0/18
+  - IP-CIDR6,2402:2a80::/32
+  - PROCESS-NAME,tv.twitch.android.app
+
+# AppleTV
+  - DOMAIN,hls-amt.itunes.apple.com
+  - DOMAIN,hls.itunes.apple.com
+  - DOMAIN,np-edge.itunes.apple.com
+  - DOMAIN,play-edge.itunes.apple.com
+  - DOMAIN,tv.applemusic.com
+  - DOMAIN,uts-api.itunes.apple.com
+  - DOMAIN-SUFFIX,tv.apple.com
+  - PROCESS-NAME,TV
+
+
+# Cake
+  - DOMAIN,d1koerlbtsmkf8.cloudfront.net
+  - DOMAIN,d31wl6mro6753i.cloudfront.net
+  - DOMAIN,static-mycake.pstatic.net
+  - DOMAIN,vstatic-mycake.pstatic.net
+  - DOMAIN-SUFFIX,cake.day
+  - DOMAIN-SUFFIX,cakeapp.me
+  - DOMAIN-SUFFIX,mycake.me
+
+

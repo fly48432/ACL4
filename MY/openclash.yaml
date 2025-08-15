@@ -30,22 +30,22 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
+      - 美国节点
       - 狮城节点
       - 台湾节点
       - 日本节点
-      - 美国节点
       - 香港节点
       - 节点选择
       - 手动切换
       - DIRECT
-  - name: OpenAi
+  - name: ChatGPT
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
+      - 美国节点
       - 狮城节点
       - 台湾节点
       - 日本节点
-      - 美国节点
       - 香港节点
       - 节点选择
       - 手动切换
@@ -74,7 +74,7 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
     type: select
     proxies:
-      - 直连
+      - DIRECT
       - 台湾节点
       - 香港节点
   - name: 国外媒体
@@ -93,9 +93,8 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
     type: select
     proxies:
-      - DIRECT
-      - 自动选择
       - 节点选择
+      - DIRECT
       - 美国节点
       - 香港节点
       - 台湾节点
@@ -154,8 +153,8 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
     type: select
     proxies:
-      - 节点选择
       - DIRECT
+      - 节点选择
       - 香港节点
       - 台湾节点
       - 狮城节点
@@ -205,11 +204,6 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
-  - name: 奈飞节点
-    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
-    include-all: true
-    filter: (?i)NF|奈飞|解锁|Netflix|NETFLIX|Media
-    type: select
   - name: GLOBAL
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png
     include-all: true
@@ -217,15 +211,16 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
+      - DIRECT
       - 节点选择
       - 手动切换
       - 电报消息
-      - OpenAi
+      - AI套件
+      - ChatGPT
       - 油管视频
-      - 奈飞视频
+      - 谷歌FCM
       - 巴哈姆特
       - 哔哩哔哩
-      - 谷歌FCM
       - 微软Bing
       - 微软云盘
       - 游戏平台
@@ -237,13 +232,33 @@ proxy-groups:
       - 美国节点
       - 台湾节点
       - 狮城节点
-      - 奈飞节点
 
 rule-providers:
   # 本地/局域网地址
   LocalAreaNetwork:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list
     path: ./ruleset/LocalAreaNetwork.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  MyDirect:
+    url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Direct.list
+    path: ./ruleset/LocalAreaNetwork.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  MyProxy:
+    url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Proxy.list
+    path: ./ruleset/LocalAreaNetwork.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyMedia:
+    url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/ProxyMedia.list
+    path: ./ruleset/ProxyMedia.list
     behavior: classical
     interval: 86400
     format: text
@@ -498,11 +513,10 @@ rules:
   - "RULE-SET,BanAD,广告拦截"
   - "RULE-SET,AdBlock,广告拦截"
   - "RULE-SET,AISuite,AI套件"
-  - "RULE-SET,OpenAi,OpenAi"
+  - "RULE-SET,OpenAi,ChatGPT"
   - "RULE-SET,BanProgramAD,应用净化"
   - "RULE-SET,BanProgramAD1,应用净化"
   - "RULE-SET,Google,谷歌FCM"
-  - "RULE-SET,GoogleCN,DIRECT"
   - "RULE-SET,SteamCN,DIRECT"
   - "RULE-SET,Telegram,电报消息"
   - "RULE-SET,Facebook,电报消息"
@@ -514,7 +528,6 @@ rules:
   - "RULE-SET,OneDrive,微软云盘"
   - "RULE-SET,Epic,游戏平台"
   - "RULE-SET,Origin,游戏平台"
-  - "RULE-SET,Sony,游戏平台"
   - "RULE-SET,Steam,游戏平台"
   - "RULE-SET,Nintendo,游戏平台"
   - "RULE-SET,YouTube,油管视频"
@@ -522,7 +535,7 @@ rules:
   - "RULE-SET,Bahamut,巴哈姆特"
   - "RULE-SET,BilibiliHMT,哔哩哔哩"
   - "RULE-SET,Bilibili,哔哩哔哩"
-  - "RULE-SET,ProxyMedia.list,国外媒体"
+  - "RULE-SET,ProxyMedia,国外媒体"
   - "RULE-SET,ChinaCompanyIp,DIRECT"
   - "RULE-SET,Download,DIRECT"
   - "GEOIP,CN,DIRECT"
