@@ -242,6 +242,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   MyDirect:
     url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Direct.list
     path: ./ruleset/LocalAreaNetwork.list
@@ -249,6 +250,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   MyProxy:
     url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Proxy.list
     path: ./ruleset/LocalAreaNetwork.list
@@ -256,6 +258,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   ProxyMedia:
     url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/ProxyMedia.list
     path: ./ruleset/ProxyMedia.list
@@ -263,6 +266,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   # AI
   AISuite:
     url: https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/AISuite.list
@@ -271,6 +275,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   # OpenAI
   OpenAi:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
@@ -279,6 +284,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
 
 # Unbreak 白名单 不应该被广告链接的网站
   UnBan:
@@ -288,6 +294,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
 
   # 本碎片只包含常见广告关键字、广告联盟。无副作用，放心使用
   BanAD:
@@ -297,6 +304,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
 
   AdBlock:
     url: https://cdn.jsdelivr.net/gh/celin1286/ACL4SSR@main/Ruleset/AdBlock.list
@@ -305,6 +313,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
 
   # 包含常用应用的各种去广告规则。
   # 可能有轻微副作用，可放心使用。（如果网站功能和广告冲突，会删掉去广告规则）
@@ -315,6 +324,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
 
   # 某些影视/动漫 APP 广告拦截规则
   BanProgramAD1:
@@ -324,28 +334,32 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
 
   Google:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml
     path: ./ruleset/Google.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   YouTube:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml
     path: ./ruleset/YouTube.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   YouTubeMusic:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTubeMusic.yaml
     path: ./ruleset/YouTubeMusic.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
 
   Bing:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Bing.list
@@ -354,28 +368,32 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   OneDrive:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml
     path: ./ruleset/OneDrive.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   iCloud:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/iCloud/iCloud.yaml
     path: ./ruleset/iCloud.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
 
   Telegram:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml
     path: ./ruleset/Telegram.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   Facebook:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Facebook/Facebook.list
     path: ./ruleset/Facebook.list
@@ -383,6 +401,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Twitter:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Twitter/Twitter.list
     path: ./ruleset/Twitter.list
@@ -390,6 +409,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Spotify:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Spotify/Spotify.list
     path: ./ruleset/Spotify.list
@@ -397,6 +417,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   TikTok:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/TikTok/TikTok.list
     path: ./ruleset/TikTok.list
@@ -404,6 +425,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Wikipedia:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Wikipedia/Wikipedia.list
     path: ./ruleset/Wikipedia.list
@@ -411,6 +433,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Epic:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Epic.list
     path: ./ruleset/Epic.list
@@ -418,6 +441,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Origin:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Origin.list
     path: ./ruleset/Origin.list
@@ -425,41 +449,47 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Steam:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
     path: ./ruleset/Steam.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   SteamCN:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SteamCN/SteamCN.yaml
     path: ./ruleset/SteamCN.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   Blizzard:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Blizzard/Blizzard.yaml
     path: ./ruleset/Blizzard.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   Nintendo:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Nintendo/Nintendo.yaml
     path: ./ruleset/Nintendo.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   Bahamut:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Bahamut/Bahamut.yaml
     path: ./ruleset/Bahamut.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
+    proxy: 香港节点
   # bilibili 港澳台番剧
   BilibiliHMT:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/BilibiliHMT.list
@@ -468,6 +498,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Bilibili:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bilibili.list
     path: ./ruleset/Bilibili.list
@@ -475,6 +506,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   ChinaCompanyIp:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaCompanyIp.list
     path: ./ruleset/ChinaCompanyIp.list
@@ -482,6 +514,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Download:
     url: https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Download.list
     path: ./ruleset/Download.list
@@ -489,6 +522,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Docker:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Docker/Docker.list
     path: ./ruleset/Docker.list
@@ -496,6 +530,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
   Github:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/GitHub/GitHub.list
     path: ./ruleset/Github.list
@@ -503,6 +538,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+    proxy: 香港节点
 
 
 rules:
@@ -510,6 +546,8 @@ rules:
   - "RULE-SET,UnBan,DIRECT"
   - "RULE-SET,iCloud,DIRECT"
   - "RULE-SET,Spotify,DIRECT"
+  - "RULE-SET,MyDirect,DIRECT"
+  - "RULE-SET,MyProxy,节点选择"
   - "RULE-SET,BanAD,广告拦截"
   - "RULE-SET,AdBlock,广告拦截"
   - "RULE-SET,AISuite,AI套件"
