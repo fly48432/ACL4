@@ -101,6 +101,17 @@ proxy-groups:
       - 狮城节点
       - 日本节点
       - 手动切换
+  - name: Github
+    type: select
+    proxies:
+      - DIRECT
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 手动切换
   - name: 微软Bing
     icon: https://cdn.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/bing.png
     type: select
@@ -282,7 +293,7 @@ rule-providers:
     path: ./ruleset/OpenAi.list
     behavior: classical
     interval: 86400
-    format: text
+    format: yaml
     type: http
     proxy: 香港节点
 
@@ -560,8 +571,8 @@ rules:
   - "RULE-SET,Facebook,电报消息"
   - "RULE-SET,TikTok,美国节点"
   - "RULE-SET,Wikipedia,节点选择"
-  - "RULE-SET,Docker,节点选择"
-  - "RULE-SET,Github,节点选择"
+  - "RULE-SET,Docker,Github"
+  - "RULE-SET,Github,Github"
   - "RULE-SET,Bing,微软Bing"
   - "RULE-SET,OneDrive,微软云盘"
   - "RULE-SET,Epic,游戏平台"
