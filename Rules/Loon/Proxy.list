@@ -3,10 +3,18 @@ DOMAIN-SUFFIX,arc.net
 DOMAIN-SUFFIX,diabroswer.com
 
 
-DOMAIN-SUFFIX, shuzijumin.com
-
 DOMAIN-SUFFIX, f-dorid.org
 
 
+DOMAIN-SUFFIX, shuzijumin.com
 DOMAIN-SUFFIX, nodeseek.com
 DOMAIN-SUFFIX, linux.do
+DOMAIN-SUFFIX, uuzi.net
+
+
+# N26 
+DOMAIN-SUFFIX, tech26.de
+DOMAIN-SUFFIX, n26.com
+
+
+DOMAIN-SUFFIX, vocalbridgeai.com
