@@ -147,7 +147,7 @@
     ],
 
     "rule_set": [
-      { "tag": "ad-reject",      "type": "remote", "format": "domain", "url": "https://adrules.top/adrules_domainset.txt",                                                                                           "update_interval": "1d" },
+      { "tag": "ad-reject",      "type": "remote", "format": "binary", "url": "https://adrules.top/adrules.srs",                                                                                                    "update_interval": "1d" },
       { "tag": "lan-ip",         "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-private.srs",                                                   "update_interval": "7d" },
       { "tag": "geosite-cn",     "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",                                                    "update_interval": "7d" },
       { "tag": "geoip-cn",       "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",                                                        "update_interval": "7d" },
