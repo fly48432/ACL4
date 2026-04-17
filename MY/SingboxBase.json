@@ -1,0 +1,61 @@
+{
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+
+  "dns": {
+    "servers": [
+      { "tag": "local",  "address": "223.5.5.5",  "detour": "DIRECT" },
+      { "tag": "remote", "address": "1.1.1.1",    "detour": "节点选择" }
+    ],
+    "rules": [
+      { "outbound": "any",          "server": "local" },
+      { "rule_set": "geosite-cn",   "server": "local" },
+      { "clash_mode": "direct",     "server": "local" },
+      { "clash_mode": "global",     "server": "remote" }
+    ],
+    "final": "remote",
+    "independent_cache": true
+  },
+
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed",
+      "sniff": true
+    }
+  ],
+
+  "outbounds": [
+    { "type": "direct",  "tag": "DIRECT" },
+    { "type": "block",   "tag": "REJECT" },
+    { "type": "dns",     "tag": "dns-out" }
+  ],
+
+  "route": {
+    "rules": [
+      { "protocol": "dns",      "outbound": "dns-out" },
+      { "clash_mode": "direct", "outbound": "DIRECT" },
+      { "clash_mode": "global", "outbound": "节点选择" }
+    ],
+    "rule_set": [
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs", "update_interval": "7d" },
+      { "tag": "geoip-cn",   "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",     "update_interval": "7d" }
+    ],
+    "final": "FINAL",
+    "auto_detect_interface": true
+  },
+
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "default_mode": "rule"
+    }
+  }
+}
