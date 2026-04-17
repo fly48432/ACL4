@@ -94,6 +94,26 @@
       "outbounds": [],
       "filter": [{ "action": "exclude", "keywords": ["港", "HK", "Hong", "台", "TW", "Tai", "日本", "JP", "Japan", "KR", "Korea", "韩", "美", "US", "United States", "新加坡", "坡", "狮城", "SG", "Singapore"] }]
     },
+    {
+      "type": "selector",
+      "tag": "Apple Proxy",
+      "outbounds": ["节点选择", "香港节点", "狮城节点", "美国节点", "日本节点", "台湾节点", "韩国节点", "DIRECT"]
+    },
+    {
+      "type": "selector",
+      "tag": "Steam",
+      "outbounds": ["DIRECT", "节点选择", "香港节点", "狮城节点", "美国节点", "日本节点", "台湾节点", "韩国节点"]
+    },
+    {
+      "type": "selector",
+      "tag": "国际直连",
+      "outbounds": ["DIRECT", "节点选择", "香港节点", "狮城节点", "美国节点", "日本节点", "台湾节点", "韩国节点"]
+    },
+    {
+      "type": "selector",
+      "tag": "FINAL",
+      "outbounds": ["DIRECT", "节点选择"]
+    },
     { "type": "direct", "tag": "DIRECT" },
     { "type": "block",  "tag": "REJECT" },
     { "type": "dns",    "tag": "dns-out" }
