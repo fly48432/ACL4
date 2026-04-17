@@ -10,10 +10,10 @@
       { "tag": "remote", "address": "1.1.1.1",    "detour": "节点选择" }
     ],
     "rules": [
-      { "outbound": "any",          "server": "local" },
-      { "rule_set": "geosite-cn",   "server": "local" },
-      { "clash_mode": "direct",     "server": "local" },
-      { "clash_mode": "global",     "server": "remote" }
+      { "outbound": "any",        "server": "local" },
+      { "rule_set": "geosite-cn", "server": "local" },
+      { "clash_mode": "direct",   "server": "local" },
+      { "clash_mode": "global",   "server": "remote" }
     ],
     "final": "remote",
     "independent_cache": true
@@ -112,7 +112,7 @@
     {
       "type": "selector",
       "tag": "FINAL",
-      "outbounds": ["DIRECT", "节点选择"]
+      "outbounds": ["节点选择", "DIRECT"]
     },
     { "type": "direct", "tag": "DIRECT" },
     { "type": "block",  "tag": "REJECT" },
@@ -120,14 +120,75 @@
   ],
 
   "route": {
+    "rule_set": [
+      { "tag": "geosite-cn",              "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",                "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geoip-cn",                "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",                  "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-ads",             "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",  "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-openai",          "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai.srs",            "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-anthropic",       "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/anthropic.srs",         "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-google-gemini",   "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-gemini.srs",     "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-tiktok",          "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",            "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-telegram",        "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",          "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-discord",         "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/discord.srs",           "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-youtube",         "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",           "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-facebook",        "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs",          "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-whatsapp",        "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/whatsapp.srs",          "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-google",          "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",            "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-twitter",         "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs",           "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-paypal",          "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/paypal.srs",            "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-spotify",         "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",           "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-onedrive",        "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs",          "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-github",          "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",            "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-docker",          "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/docker.srs",            "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-apple-cn",        "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-cn.srs",          "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-icloud",          "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/icloud.srs",            "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-apple",           "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",             "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-steam",           "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam.srs",             "download_detour": "DIRECT", "update_interval": "7d" },
+      { "tag": "geosite-bahamut",         "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bahamut.srs",           "download_detour": "DIRECT", "update_interval": "7d" }
+    ],
     "rules": [
       { "protocol": "dns",      "outbound": "dns-out" },
       { "clash_mode": "direct", "outbound": "DIRECT" },
-      { "clash_mode": "global", "outbound": "节点选择" }
-    ],
-    "rule_set": [
-      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs", "update_interval": "7d" },
-      { "tag": "geoip-cn",   "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",     "update_interval": "7d" }
+      { "clash_mode": "global", "outbound": "节点选择" },
+
+      { "ip_is_private": true, "outbound": "DIRECT" },
+      { "domain_suffix": ["daiyan.org"], "outbound": "DIRECT" },
+
+      { "rule_set": "geosite-ads", "outbound": "REJECT" },
+
+      { "rule_set": ["geosite-openai", "geosite-anthropic", "geosite-google-gemini"], "outbound": "美国节点" },
+      { "domain_suffix": [
+          "anthropic.com", "claude.ai", "claudeusercontent.com", "claude.com",
+          "diabrowser.engineering", "cursor.sh",
+          "bard.google.com", "gemini.google.com", "geminicli.com",
+          "deepmind.com", "deepmind.google",
+          "generativelanguage.googleapis.com", "geller-pa.googleapis.com", "proactivebackend-pa.googleapis.com",
+          "aistudio.google.com", "makersuite.google.com", "generativeai.google",
+          "notebooklm.google", "notebooklm.google.com",
+          "x.ai", "grok.com", "meta.ai", "perplexity.ai", "sora.com"
+        ], "outbound": "美国节点" },
+      { "domain": ["ai.google.dev", "alkalicore-pa.clients6.google.com", "waa-pa.clients6.google.com", "sora-cdn.oaistatic.com"], "outbound": "美国节点" },
+
+      { "rule_set": "geosite-tiktok",   "outbound": "美国节点" },
+      { "rule_set": "geosite-facebook", "outbound": "美国节点" },
+      { "rule_set": "geosite-paypal",   "outbound": "美国节点" },
+
+      { "rule_set": ["geosite-telegram", "geosite-discord", "geosite-youtube", "geosite-whatsapp", "geosite-twitter"], "outbound": "节点选择" },
+
+      { "rule_set": ["geosite-spotify", "geosite-onedrive", "geosite-github", "geosite-docker"], "outbound": "国际直连" },
+
+      { "domain_suffix": ["tv.apple.com"], "outbound": "Apple Proxy" },
+      { "domain": ["hls-amt.itunes.apple.com", "hls.itunes.apple.com", "np-edge.itunes.apple.com", "play-edge.itunes.apple.com", "tv.applemusic.com", "uts-api.itunes.apple.com"], "outbound": "Apple Proxy" },
+
+      { "rule_set": ["geosite-apple-cn", "geosite-icloud"], "outbound": "DIRECT" },
+      { "rule_set": "geosite-apple", "outbound": "节点选择" },
+
+      { "rule_set": "geosite-steam",   "outbound": "Steam" },
+      { "rule_set": "geosite-bahamut", "outbound": "台湾节点" },
+
+      { "rule_set": "geosite-google", "outbound": "节点选择" },
+
+      { "rule_set": ["geosite-cn", "geoip-cn"], "outbound": "DIRECT" }
     ],
     "final": "FINAL",
     "auto_detect_interface": true
