@@ -10,10 +10,10 @@
       { "tag": "remote", "address": "1.1.1.1",    "detour": "节点选择" }
     ],
     "rules": [
-      { "outbound": "any",    "server": "local" },
-      { "rule_set": "geosite-cn", "server": "local" },
-      { "clash_mode": "direct",   "server": "local" },
-      { "clash_mode": "global",   "server": "remote" }
+      { "outbound": "any",          "server": "local" },
+      { "rule_set": "geosite-cn",   "server": "local" },
+      { "clash_mode": "direct",     "server": "local" },
+      { "clash_mode": "global",     "server": "remote" }
     ],
     "final": "remote",
     "independent_cache": true
@@ -23,7 +23,7 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "inet4_address": "172.19.0.1/30",                                                                                            
+      "inet4_address": "172.19.0.1/30",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
       "strict_route": true,
@@ -94,91 +94,21 @@
       "outbounds": [],
       "filter": [{ "action": "exclude", "keywords": ["港", "HK", "Hong", "台", "TW", "Tai", "日本", "JP", "Japan", "KR", "Korea", "韩", "美", "US", "United States", "新加坡", "坡", "狮城", "SG", "Singapore"] }]
     },
-    {
-      "type": "selector",
-      "tag": "Apple Proxy",
-      "outbounds": ["节点选择", "香港节点", "狮城节点", "美国节点", "日本节点", "台湾节点", "韩国节点", "DIRECT"]
-    },
-    {
-      "type": "selector",
-      "tag": "Steam",
-      "outbounds": ["DIRECT", "节点选择", "香港节点", "狮城节点", "美国节点", "日本节点", "台湾节点", "韩国节点"]
-    },
-    {
-      "type": "selector",
-      "tag": "国际直连",
-      "outbounds": ["DIRECT", "节点选择", "香港节点", "狮城节点", "美国节点", "日本节点", "台湾节点", "韩国节点"]
-    },
-    {
-      "type": "selector",
-      "tag": "FINAL",
-      "outbounds": ["DIRECT", "节点选择"]
-    },
-    { "type": "direct",  "tag": "DIRECT" },
-    { "type": "block",   "tag": "REJECT" },
-    { "type": "dns",     "tag": "dns-out" }
+    { "type": "direct", "tag": "DIRECT" },
+    { "type": "block",  "tag": "REJECT" },
+    { "type": "dns",    "tag": "dns-out" }
   ],
 
   "route": {
     "rules": [
       { "protocol": "dns",      "outbound": "dns-out" },
       { "clash_mode": "direct", "outbound": "DIRECT" },
-      { "clash_mode": "global", "outbound": "节点选择" },
-
-      { "rule_set": "ad-reject",  "outbound": "REJECT" },
-
-      { "rule_set": ["lan-ip"],   "outbound": "DIRECT" },
-      { "rule_set": ["direct-domain", "geosite-cn", "geoip-cn"], "outbound": "DIRECT" },
-
-      { "rule_set": ["claude", "gemini", "aisuite"], "outbound": "美国节点" },
-      { "rule_set": ["tiktok", "facebook", "paypal"], "outbound": "美国节点" },
-
-      { "rule_set": ["telegram", "discord", "youtube", "cake", "whatsapp", "google", "twitter"], "outbound": "节点选择" },
-
-      { "rule_set": ["spotify", "onedrive", "github", "docker"], "outbound": "国际直连" },
-
-      { "rule_set": ["apple-tv", "apple-news"],   "outbound": "Apple Proxy" },
-      { "rule_set": ["apple-id", "icloud"],        "outbound": "DIRECT" },
-
-      { "rule_set": ["steam"],    "outbound": "Steam" },
-      { "rule_set": ["bahamut"],  "outbound": "台湾节点" },
-
-      { "rule_set": ["proxy-custom", "ibkr-custom"], "outbound": "节点选择" }
+      { "clash_mode": "global", "outbound": "节点选择" }
     ],
-
     "rule_set": [
-      { "tag": "ad-reject",      "type": "remote", "format": "binary", "url": "https://adrules.top/adrules.srs",                                                                                                    "update_interval": "1d" },
-      { "tag": "lan-ip",         "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-private.srs",                                                   "update_interval": "7d" },
-      { "tag": "geosite-cn",     "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",                                                    "update_interval": "7d" },
-      { "tag": "geoip-cn",       "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",                                                        "update_interval": "7d" },
-      { "tag": "direct-domain",  "type": "remote", "format": "source", "url": "https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Direct.list",                                                              "update_interval": "1d" },
-      { "tag": "proxy-custom",   "type": "remote", "format": "source", "url": "https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Proxy.list",                                                               "update_interval": "1d" },
-      { "tag": "ibkr-custom",    "type": "remote", "format": "source", "url": "https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/IBKR.list",                                                                "update_interval": "7d" },
-      { "tag": "aisuite",        "type": "remote", "format": "source", "url": "https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/AISuite.list",                                                             "update_interval": "1d" },
-      { "tag": "claude",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list",                                 "update_interval": "1d" },
-      { "tag": "gemini",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list",                                 "update_interval": "1d" },
-      { "tag": "tiktok",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list",                                 "update_interval": "1d" },
-      { "tag": "telegram",       "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list",                             "update_interval": "1d" },
-      { "tag": "discord",        "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Discord/Discord.list",                               "update_interval": "1d" },
-      { "tag": "youtube",        "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTube/YouTube.list",                               "update_interval": "1d" },
-      { "tag": "cake",           "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Cake/Cake.list",                                     "update_interval": "7d" },
-      { "tag": "facebook",       "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Facebook/Facebook.list",                             "update_interval": "1d" },
-      { "tag": "whatsapp",       "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Whatsapp/Whatsapp.list",                             "update_interval": "1d" },
-      { "tag": "google",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list",                                 "update_interval": "1d" },
-      { "tag": "spotify",        "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list",                               "update_interval": "1d" },
-      { "tag": "onedrive",       "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OneDrive/OneDrive.list",                             "update_interval": "1d" },
-      { "tag": "github",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GitHub/GitHub.list",                                 "update_interval": "1d" },
-      { "tag": "docker",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Docker/Docker.list",                                 "update_interval": "1d" },
-      { "tag": "paypal",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/PayPal/PayPal.list",                                 "update_interval": "7d" },
-      { "tag": "apple-tv",       "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleTV/AppleTV.list",                               "update_interval": "1d" },
-      { "tag": "apple-news",     "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleNews/AppleNews.list",                           "update_interval": "1d" },
-      { "tag": "apple-id",       "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleID/AppleID.list",                               "update_interval": "1d" },
-      { "tag": "icloud",         "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/iCloud/iCloud.list",                                 "update_interval": "1d" },
-      { "tag": "steam",          "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Steam/Steam.list",                                   "update_interval": "1d" },
-      { "tag": "twitter",        "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitter/Twitter.list",                               "update_interval": "1d" },
-      { "tag": "bahamut",        "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Bahamut/Bahamut.list",                               "update_interval": "1d" }
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs", "update_interval": "7d" },
+      { "tag": "geoip-cn",   "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",     "update_interval": "7d" }
     ],
-
     "final": "FINAL",
     "auto_detect_interface": true
   },
