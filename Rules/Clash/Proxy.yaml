@@ -1,0 +1,18 @@
+payload:
+  - DOMAIN-SUFFIX, f-dorid.org
+
+  - DOMAIN-SUFFIX, shuzijumin.com
+  - DOMAIN-SUFFIX, nodeseek.com
+  - DOMAIN-SUFFIX, linux.do
+  - DOMAIN-SUFFIX, uuzi.net
+
+  # N26
+  - DOMAIN-SUFFIX, tech26.de
+  - DOMAIN-SUFFIX, n26.com
+
+  # IBRK
+  - DOMAIN-SUFFIX, ibkr.com
+  - DOMAIN-SUFFIX, ibllc.com
+  - DOMAIN-SUFFIX, interactivebrokers.com
+
+  - DOMAIN-SUFFIX, vocalbridgeai.com
