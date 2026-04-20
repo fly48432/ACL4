@@ -20,7 +20,7 @@ global-client-fingerprint: chrome
 allow-lan: true
 mode: rule
 log-level: info
-ipv6: true
+ipv6: false
 udp: true
 
 external-controller: 0.0.0.0:9090
@@ -174,12 +174,12 @@ rule-providers:
   DorianDirect:
     <<: *RuleProviders
     path: './rules/DorianDirect.yaml'
-    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Direct.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/Direct.yaml'
 
   DorianProxy:
     <<: *RuleProviders
     path: './rules/DorianProxy.yaml'
-    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Loon/Proxy.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/Proxy.yaml'
 
   Proxy:
     <<: *RuleProviders
@@ -204,7 +204,7 @@ rule-providers:
   AISuit:
     <<: *RuleProviders
     path: './rules/AISuit.yaml'
-    url: 'https://github.com/fly48432/ACL4/blob/main/Rules/Clash/AISuit.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/AISuit.yaml'
 
   Google:
     <<: *RuleProviders
