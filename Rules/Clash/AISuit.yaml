@@ -45,6 +45,9 @@ payload:
   - 
   - # > Perplexity AI
   - DOMAIN-SUFFIX,perplexity.ai
+
+  - # > Haggingface
+  - DOMAIN-SUFFIX, huggingface.co
   - 
   - # > Sora
   - DOMAIN-SUFFIX,sora.com
