@@ -45,6 +45,9 @@ DOMAIN-SUFFIX,meta.ai
 # > Perplexity AI
 DOMAIN-SUFFIX,perplexity.ai
 
+# > Huggingface
+DOMAIN-SUFFIX, huggingface.co
+
 # > Sora
 DOMAIN-SUFFIX,sora.com
 DOMAIN,sora-cdn.oaistatic.com
