@@ -199,7 +199,7 @@ rule-providers:
   ChatGPT:
     <<: *RuleProviders
     path: './rules/ChatGPT.yaml'
-    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChatGPT/ChatGPT.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml'
 
   AISuit:
     <<: *RuleProviders
@@ -214,7 +214,7 @@ rule-providers:
   Youtube:
     <<: *RuleProviders
     path: './rules/Youtube.yaml'
-    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Youtube/Youtube.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml'
 
   GoogleFCM:
     <<: *RuleProviders
