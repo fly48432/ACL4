@@ -21,5 +21,7 @@ DOMAIN-SUFFIX,ibllc.com
 DOMAIN-SUFFIX,ibkr.com
 DOMAIN-SUFFIX,interactivebrokers.com
 
+# > BBAE
+DOMAIN-SUFFIX, bbaepro.com
 
 DOMAIN-SUFFIX, vocalbridgeai.com
