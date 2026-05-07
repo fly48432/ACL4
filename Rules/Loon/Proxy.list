@@ -24,4 +24,7 @@ DOMAIN-SUFFIX,interactivebrokers.com
 # > BBAE
 DOMAIN-SUFFIX, bbaepro.com
 
+# > SCHWAB
+DOMAIN-SUFFIX, schwab.com
+
 DOMAIN-SUFFIX, vocalbridgeai.com
