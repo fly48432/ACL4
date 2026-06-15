@@ -1,0 +1,4 @@
+deploy:
+  -DOMAIN-SUFFIX,redpocket.com
+  -DOMAIN-SUFFIX,ebay.us
+  -DOMAIN-SUFFIX,ebay.com
