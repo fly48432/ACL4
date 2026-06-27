@@ -1,24 +1,31 @@
 payload:
+  # arc
+  - DOMAIN-SUFFIX,arc.net
+  - DOMAIN-SUFFIX,diabroswer.com
+
+
   - DOMAIN-SUFFIX, f-dorid.org
+
 
   - DOMAIN-SUFFIX, shuzijumin.com
   - DOMAIN-SUFFIX, nodeseek.com
   - DOMAIN-SUFFIX, linux.do
   - DOMAIN-SUFFIX, uuzi.net
 
+
   # N26
   - DOMAIN-SUFFIX, tech26.de
   - DOMAIN-SUFFIX, n26.com
 
-  # IBRK
-  - DOMAIN-SUFFIX, ibkr.com
-  - DOMAIN-SUFFIX, ibllc.com
-  - DOMAIN-SUFFIX, interactivebrokers.com
+  # > IBKR
+  - DOMAIN-SUFFIX,ibllc.com
+  - DOMAIN-SUFFIX,ibkr.com
+  - DOMAIN-SUFFIX,interactivebrokers.com
 
-  # bbae
-  - DOMAIN-SUFFIX, bbaepro.com 
+  # > BBAE
+  - DOMAIN-SUFFIX, bbaepro.com
 
-  # SCHWAB
+  # > SCHWAB
   - DOMAIN-SUFFIX, schwab.com
 
   - DOMAIN-SUFFIX, vocalbridgeai.com

@@ -1,0 +1,18 @@
+payload:
+  # > O2 UK / giffgaff / Tesco Mobile / Sky Mobile
+  - DOMAIN-SUFFIX,epdg.epc.mnc010.mcc234.pub.3gppnetwork.org
+
+  # > Vodafone UK / VOXI / Talkmobile
+  - DOMAIN-SUFFIX,epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+
+  # > Three UK / SMARTY
+  - DOMAIN-SUFFIX,epdg.epc.mnc020.mcc234.pub.3gppnetwork.org
+
+  # > EE / BT Mobile
+  - DOMAIN-SUFFIX,epdg.epc.mnc030.mcc234.pub.3gppnetwork.org
+
+  # > EE legacy / Orange UK
+  - DOMAIN-SUFFIX,epdg.epc.mnc033.mcc234.pub.3gppnetwork.org
+
+  # > EE legacy / T-Mobile UK
+  - DOMAIN-SUFFIX,epdg.epc.mnc034.mcc234.pub.3gppnetwork.org

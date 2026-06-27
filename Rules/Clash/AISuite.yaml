@@ -1,30 +1,30 @@
 payload:
-  - # > Claude
+  # > Claude
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claudeusercontent.com
   - DOMAIN-SUFFIX,claude.com
-  - 
-  - # > DIA
+
+  # > DIA
   - DOMAIN-SUFFIX,diabrowser.engineering
-  - 
-  - # > Cursor
+
+  # > Cursor
   - DOMAIN-SUFFIX,cursor.sh
-  - 
-  - # > Google Gemini
+
+  # > Google Gemini
   - DOMAIN-SUFFIX,apis.google.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,geminicli.com
-  - 
-  - # > Google DeepMind
+
+  # > Google DeepMind
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,deepmind.google
-  - # > Google Generative Language API
+  # > Google Generative Language API
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,geller-pa.googleapis.com
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-  - # > Google AI Studio
+  # > Google AI Studio
   - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,makersuite.google.com
@@ -32,23 +32,23 @@ payload:
   - DOMAIN,ai.google.dev
   - DOMAIN,alkalicore-pa.clients6.google.com
   - DOMAIN,waa-pa.clients6.google.com
-  - # > Google NotebookLM
+  # > Google NotebookLM
   - DOMAIN-SUFFIX,notebooklm.google
   - DOMAIN-SUFFIX,notebooklm.google.com
-  - 
-  - # > Grok
+
+  # > Grok
   - DOMAIN-SUFFIX,x.ai
   - DOMAIN-SUFFIX,grok.com
-  - 
-  - # > Meta AI
+
+  # > Meta AI
   - DOMAIN-SUFFIX,meta.ai
-  - 
-  - # > Perplexity AI
+
+  # > Perplexity AI
   - DOMAIN-SUFFIX,perplexity.ai
 
-  - # > Haggingface
+  # > Huggingface
   - DOMAIN-SUFFIX, huggingface.co
-  - 
-  - # > Sora
+
+  # > Sora
   - DOMAIN-SUFFIX,sora.com
   - DOMAIN,sora-cdn.oaistatic.com

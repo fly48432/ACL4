@@ -1,0 +1,20 @@
+# > T-Mobile US / Mint Mobile / Ultra Mobile / Google Fi on T-Mobile
+DOMAIN-SUFFIX,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+
+# > AT&T / Cricket / AT&T MVNO
+DOMAIN-SUFFIX,epdg.epc.mnc410.mcc310.pub.3gppnetwork.org
+
+# > Verizon / Visible / Xfinity Mobile / Spectrum Mobile
+DOMAIN-SUFFIX,epdg.epc.mnc480.mcc311.pub.3gppnetwork.org
+
+# > US Cellular
+DOMAIN-SUFFIX,epdg.epc.mnc580.mcc311.pub.3gppnetwork.org
+
+# > Dish Wireless / Boost Mobile
+DOMAIN-SUFFIX,epdg.epc.mnc340.mcc313.pub.3gppnetwork.org
+
+# > Sprint legacy
+DOMAIN-SUFFIX,epdg.epc.mnc120.mcc310.pub.3gppnetwork.org
+
+# > FirstNet
+DOMAIN-SUFFIX,epdg.epc.mnc100.mcc313.pub.3gppnetwork.org

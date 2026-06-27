@@ -176,10 +176,31 @@ rule-providers:
     path: './rules/DorianDirect.yaml'
     url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/Direct.yaml'
 
-  DorianCellphone:
+  DorianUS:
     <<: *RuleProviders
-    path: './rules/DorianProxy.yaml'
-    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/Cellphone.yaml'
+    path: './rules/US.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/US.yaml'
+
+  DorianJP:
+    <<: *RuleProviders
+    path: './rules/JP.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/JP.yaml'
+
+  Broker:
+    <<: *RuleProviders
+    format: text
+    path: './rules/Broker.list'
+    url: 'https://raw.githubusercontent.com/Arthur-vx/broker-rules/main/rule/Shadowrocket/Broker/Broker.list'
+
+  WiFiCallingUS:
+    <<: *RuleProviders
+    path: './rules/WiFiCallingUS.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/WiFiCallingUS.yaml'
+
+  WiFiCallingUK:
+    <<: *RuleProviders
+    path: './rules/WiFiCallingUK.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/WiFiCallingUK.yaml'
 
   DorianProxy:
     <<: *RuleProviders
@@ -203,13 +224,13 @@ rule-providers:
 
   ChatGPT:
     <<: *RuleProviders
-    path: './rules/ChatGPT.yaml'
-    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml'
+    path: './rules/OpenAI.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/OpenAI.yaml'
 
-  AISuit:
+  AISuite:
     <<: *RuleProviders
-    path: './rules/AISuit.yaml'
-    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/AISuit.yaml'
+    path: './rules/AISuite.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/AISuite.yaml'
 
   Google:
     <<: *RuleProviders
@@ -356,12 +377,16 @@ rules:
   - RULE-SET, LAN, DIRECT
   - RULE-SET, Direct, DIRECT
   - RULE-SET, DorianDirect, DIRECT
-  - RULE-SET, DorianCellphone, 美国策略
+  - RULE-SET, DorianUS, 美国策略
+  - RULE-SET, DorianJP, 日本自动策略
+  - RULE-SET, Broker, 美国策略
+  - RULE-SET, WiFiCallingUS, 美国策略
+  - RULE-SET, WiFiCallingUK, 英国自动策略
   - RULE-SET, DorianProxy, 节点选择
   - RULE-SET, Claude, Claude
   - RULE-SET, Gemini, Gemini
   - RULE-SET, ChatGPT, ChatGPT
-  - RULE-SET, AISuit, AI
+  - RULE-SET, AISuite, AI
   - RULE-SET, Google, 节点选择
   - RULE-SET, Youtube, 节点选择
   - RULE-SET, GoogleFCM, 节点选择
