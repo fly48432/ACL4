@@ -20,13 +20,13 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet -- Rules/Clash; then
+          git add Rules/Clash
+          if git diff --cached --quiet -- Rules/Clash; then
             echo "No changes to commit"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Rules/Clash
           git commit -m "chore: sync Clash rules from Loon lists"
           git pull --rebase origin main
           git push origin main
