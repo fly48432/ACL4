@@ -13,6 +13,8 @@ RULE_NAMES = (
     "Shopping",
     "US",
     "JP",
+    "HK",
+    "SG",
     "WiFiCallingUS",
     "WiFiCallingUK",
 )

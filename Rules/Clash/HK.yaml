@@ -1,0 +1,3 @@
+payload:
+  # 走香港节点的规则（快捷指令追加）
+  - DOMAIN-SUFFIX,placeholder-hk.invalid
