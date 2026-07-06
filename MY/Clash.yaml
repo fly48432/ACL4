@@ -186,6 +186,16 @@ rule-providers:
     path: './rules/JP.yaml'
     url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/JP.yaml'
 
+  DorianHK:
+    <<: *RuleProviders
+    path: './rules/HK.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/HK.yaml'
+
+  DorianSG:
+    <<: *RuleProviders
+    path: './rules/SG.yaml'
+    url: 'https://cdn.jsdelivr.net/gh/fly48432/ACL4@main/Rules/Clash/SG.yaml'
+
   Broker:
     <<: *RuleProviders
     format: text
@@ -379,6 +389,8 @@ rules:
   - RULE-SET, DorianDirect, DIRECT
   - RULE-SET, DorianUS, 美国策略
   - RULE-SET, DorianJP, 日本自动策略
+  - RULE-SET, DorianHK, 香港自动策略
+  - RULE-SET, DorianSG, 狮城自动策略
   - RULE-SET, Broker, 美国策略
   - RULE-SET, WiFiCallingUS, 美国策略
   - RULE-SET, WiFiCallingUK, 英国自动策略
