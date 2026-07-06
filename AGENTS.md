@@ -51,6 +51,8 @@ Preferred order:
 2. Custom rules:
    - `US`
    - `JP`
+   - `HK`
+   - `SG`
    - Broker
    - `WiFiCallingUS`
    - `WiFiCallingUK`
@@ -69,6 +71,8 @@ Keep this ordering consistent in:
 - `MY/Subconverter_Loon.ini`
 - `MY/Subconverter_Clash.ini`
 - local Loon config if edited manually
+
+The `HK`/`SG` rulesets are wired in `MY/Clash.yaml`, `MY/Subconverter_Loon.ini`, AND `MY/Subconverter_Clash.ini` — consistent with the ordering requirement above.
 
 ## Current Custom Rule Groups
 
@@ -107,6 +111,28 @@ Policy:
 
 - Loon: `日本节点`
 - Clash: `日本自动策略`
+
+### HK
+
+File: `Rules/Loon/HK.list`
+
+Use for domains that should force Hong Kong nodes.
+
+Policy:
+
+- Loon: `香港节点`
+- Clash: `香港自动策略`
+
+### SG
+
+File: `Rules/Loon/SG.list`
+
+Use for domains that should force Singapore (狮城) nodes.
+
+Policy:
+
+- Loon: `狮城节点`
+- Clash: `狮城自动策略`
 
 ### Broker
 

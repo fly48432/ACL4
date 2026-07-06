@@ -93,9 +93,9 @@
 
 ## 生效路径与时延
 
-- **Loon**：快捷指令提交并 purge CDN 后，在 Loon 里手动刷新对应远程规则即时生效；否则按 Loon 的远程规则刷新周期生效。
-- **OpenClash**：rule-provider 每 3600 秒自动拉取，配合快捷指令的 purge 步骤，最迟一小时内生效。
-- 两端引用的都是 `cdn.jsdelivr.net`；purge 是临时缓解手段，根治（换 raw + 经代理拉取）由后续「URL 标准化」阶段处理。
+- **Loon**：快捷指令提交并 purge Loon 规则文件缓存后，在 Loon 里手动刷新对应远程规则即时生效；否则按 Loon 的远程规则刷新周期生效。
+- **OpenClash**：拉取的是生成的 `Rules/Clash/*.yaml`，由 GitHub Actions 在 bot 提交后 purge 其 jsDelivr 缓存；rule-provider 每 3600 秒自动拉取，最迟一小时内生效。
+- 两端引用的都是 `cdn.jsdelivr.net`；Loon 文件由快捷指令 purge、Clash 文件由 workflow purge，均为缓解手段，根治（换 raw + 经代理拉取）由后续「URL 标准化」阶段处理。
 
 ## 验证方式
 

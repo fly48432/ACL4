@@ -19,6 +19,7 @@ jobs:
         run: python3 scripts/sync_rules.py
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git add Rules/Clash
           if git diff --cached --quiet -- Rules/Clash; then
@@ -30,3 +31,17 @@ jobs:
           git commit -m "chore: sync Clash rules from Loon lists"
           git pull --rebase origin main
           git push origin main
+          {
+            echo "changed<<EOF"
+            git diff-tree --no-commit-id --name-only -r HEAD -- Rules/Clash
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Purge jsDelivr cache for updated Clash rules
+        if: steps.commit.outputs.changed != ''
+        run: |
+          printf '%s\n' "${{ steps.commit.outputs.changed }}" | while read -r f; do
+            [ -z "$f" ] && continue
+            echo "Purging $f"
+            curl -fsS "https://purge.jsdelivr.net/gh/fly48432/ACL4@main/$f" || true
+          done
