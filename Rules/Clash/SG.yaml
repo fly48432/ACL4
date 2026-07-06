@@ -1,4 +1,3 @@
 payload:
   # 走新加坡（狮城）节点的规则（快捷指令追加）
   - DOMAIN-SUFFIX,placeholder-sg.invalid
-  - DOMAIN-SUFFIX,e2e-purge-test.invalid
