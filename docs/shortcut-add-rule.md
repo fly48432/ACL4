@@ -3,6 +3,26 @@
 在 iPhone 上通过快捷指令把域名规则直接提交到本仓库，无需电脑。
 提交后：Loon 手动刷新对应远程规则即时生效；OpenClash 最迟 1 小时自动生效。
 
+## 快速导入（推荐）
+
+仓库已内置生成好并签名的快捷指令，无需手工逐个动作搭建：
+
+1. 下载 `shortcut/ACL4加规则.shortcut`（`--mode anyone` 签名，任何人可导入）。
+2. 双击（Mac）或用「文件」App 打开（iPhone）→「添加快捷指令」。
+3. 编辑该快捷指令，找到内容为 `github_pat_请替换为你的Token` 的文本动作，替换为你的 PAT（创建方法见下方「第一步」）。
+4. 完成。可从分享表单调用，或直接运行手动输入域名。
+
+该文件由 `scripts/gen_shortcut.py` 生成——改菜单/仓库名后重新生成并签名：
+
+```bash
+python3 scripts/gen_shortcut.py /tmp/acl4.shortcut
+shortcuts sign --mode anyone --input /tmp/acl4.shortcut --output shortcut/ACL4加规则.shortcut
+```
+
+生成器里每种动作的序列化格式均对齐了线上真实快捷指令样本（显式 UUID 接线：`text.match` 的 `text` 用 `WFTextTokenString`、`getgroup` 用 `matches` 附件、`conditional` 用数字 `WFCondition`、`setvariable`/`getvalueforkey`/`base64encode` 均带显式 `WFInput`）。host 提取正则、后缀候选、base64 解码、查重逻辑已用真实 `SG.list` 数据验证通过。
+
+下方「第二步」的逐动作说明保留作为原理参考与手工搭建的后备方案。
+
 ## 第一步：创建 GitHub Fine-grained PAT（一次性）
 
 1. 打开 <https://github.com/settings/personal-access-tokens/new>
