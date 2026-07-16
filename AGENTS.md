@@ -245,3 +245,14 @@ When syncing repo decisions into that file:
 - Keep `FINAL,FINAL` in `[Rule]`.
 
 Review the file before editing because it is outside git and may contain device-specific local proxy definitions.
+
+## Tooling
+
+Scripts and artifacts that automate the workflows above:
+
+- `scripts/sync_rules.py` — generate `Rules/Clash/*.yaml` from `Rules/Loon/*.list`. Run after editing any synced Loon list. Also runs automatically in CI (see below).
+- `.github/workflows/sync-rules.yml` — on push touching `Rules/Loon/**`, regenerates Clash rules, commits as bot, and purges the affected `Rules/Clash/*.yaml` jsDelivr caches. Lets phone-side edits reach the router without a computer.
+- `scripts/gen_shortcut.py` + `shortcut/ACL4加规则.shortcut` — the iOS Shortcut that appends rules via the GitHub Contents API. Generator is the source of truth (regenerate + `shortcuts sign --mode anyone`); build/verify method and menu→file mapping in `docs/shortcut-add-rule.md`.
+- `scripts/reflow_loon_rules.py` — reflow local `[Rule]` entries from `default.lcf` into repo lists. `--dry-run` (default) prints the migration plan; `--apply` writes+syncs+commits; `--push` optional. Read-only on `default.lcf`; cleanup of migrated local rules is manual in the Loon UI. Design: `docs/superpowers/specs/2026-07-08-loon-local-rules-reflow-design.md`.
+
+Reflow policy→file map (Loon local policy → repo list): `DIRECT`→Direct, `节点选择`→Proxy, `美国节点`→US, `日本节点`→JP, `香港节点`→HK, `狮城节点`→SG. Non-domain rule types and unmapped policies are reported and skipped, not migrated.
