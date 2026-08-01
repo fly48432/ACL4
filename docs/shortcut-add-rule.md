@@ -19,7 +19,11 @@ python3 scripts/gen_shortcut.py /tmp/acl4.shortcut
 shortcuts sign --mode anyone --input /tmp/acl4.shortcut --output shortcut/ACL4加规则.shortcut
 ```
 
-生成器里每种动作的序列化格式均对齐了线上真实快捷指令样本（显式 UUID 接线：`text.match` 的 `text` 用 `WFTextTokenString`、`getgroup` 用 `matches` 附件、`conditional` 用数字 `WFCondition`、`setvariable`/`getvalueforkey`/`base64encode` 均带显式 `WFInput`）。host 提取正则、后缀候选、base64 解码、查重逻辑已用真实 `SG.list` 数据验证通过。
+生成器里每种动作的序列化格式均对齐了线上真实快捷指令样本（显式 UUID 接线：`text.match` 的 `text` 用 `WFTextTokenString`、`conditional` 用数字 `WFCondition`、`setvariable`/`getvalueforkey`/`base64encode` 均带显式 `WFInput`）。
+
+**host 提取的坑（重要）**：早期版本用 `text.match` + `text.match.getgroup`（capture group）取主机名，实测用 `shortcuts run` 无头运行会**稳定挂起**（R1 探针复现）。现改为 **getgroup-free** 方案——用整体匹配一个域名 token 的正则（`DOMAIN_RE`），无匹配时回退原始输入（关键词等非域名输入不会被卡住）。改生成器时不要退回 getgroup 写法。
+
+**验证状态**：签名与结构（控制流配对、UUID 先产后用、序列化对齐真实样本）已校验；base64 解码、GET/PUT、查重等单点机制已用无头探针验证。**含交互菜单的完整端到端流程仍待在真机上跑通确认**（Mac 无头运行会卡在菜单，需 iPhone 实测）。
 
 下方「第二步」的逐动作说明保留作为原理参考与手工搭建的后备方案。
 

@@ -119,7 +119,9 @@ def headers():
 
 
 HAS_NO_VALUE, CONTAINS = 101, 99
-HOST_RE = r"^(?:[a-zA-Z][a-zA-Z0-9+.\-]*://)?(?:[^/@\s]+@)?([^/:?#\s]+)"
+# 整体匹配一个域名 token（含点、多级标签）；用于从裸域名或 URL 中取主机名。
+# 不用带 capture group 的正则，因为 text.match.getgroup 实测会挂起（R1 探针复现）。
+DOMAIN_RE = r"[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+"
 
 acts = []
 
@@ -142,20 +144,23 @@ acts += [
     if_end(g),
 ]
 
-# ── 2. 提取域名 + 空值守卫 ──
-uMatch, uGrp = U(), U()
+# ── 2. 提取域名（getgroup-free：整体匹配域名 token，无匹配则回退原始输入）──
+# 裸域名→自身；URL→主机名；关键词等非域名→无匹配→回退原始输入（不硬退出，
+# 以便 DOMAIN-KEYWORD 流程仍可用）。
+uMatch = U()
 acts += [
-    A("text.match", {"WFMatchTextPattern": HOST_RE, "WFMatchTextCaseSensitive": False,
+    A("text.match", {"WFMatchTextPattern": DOMAIN_RE, "WFMatchTextCaseSensitive": False,
                      "text": ts(var("原始输入")), "UUID": uMatch}),
-    A("text.match.getgroup", {"matches": ta(ao(uMatch, "Matches")),
-                              "WFGetGroupType": "Group At Index", "WFGroupIndex": 1, "UUID": uGrp}),
-    setvar("域名", ao(uGrp, "Match Group")),
+    setvar("域名候选", ao(uMatch, "Matches")),
 ]
 g = U()
+uFall = U()
 acts += [
-    if_start(g, ao(uGrp, "Match Group"), HAS_NO_VALUE),
-    notify("输入无效，未提取到域名"),
-    A("exit"),
+    if_start(g, var("域名候选"), HAS_NO_VALUE),
+    text(ts(var("原始输入")), uFall),
+    setvar("域名", ao(uFall, "Text")),
+    if_else(g),
+    setvar("域名", var("域名候选")),
     if_end(g),
 ]
 
