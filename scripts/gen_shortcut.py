@@ -169,17 +169,16 @@ g = U()
 acts.append(menu_start(g, "规则类型", ["DOMAIN-SUFFIX", "DOMAIN", "DOMAIN-KEYWORD"]))
 
 acts.append(menu_case(g, "DOMAIN-SUFFIX"))
-uM2, uM3, uList, uPick, uT = U(), U(), U(), U(), U()
+# 候选只列两个必非空项：注册域（末两级标签）与完整主机名。
+# 不用 [^.]+\.[^.]+\.[^.]+$ 这类会对 2 级域名匹配为空的正则——空项被选中会
+# 产出空规则值（DOMAIN-SUFFIX,）脏数据。2 级域名下两项相同（无害重复）。
+uM2, uList, uPick, uT = U(), U(), U(), U()
 acts += [
     A("text.match", {"WFMatchTextPattern": r"[^.]+\.[^.]+$", "WFMatchTextCaseSensitive": False,
                      "text": ts(var("域名")), "UUID": uM2}),
     setvar("候选2", ao(uM2, "Matches")),
-    A("text.match", {"WFMatchTextPattern": r"[^.]+\.[^.]+\.[^.]+$", "WFMatchTextCaseSensitive": False,
-                     "text": ts(var("域名")), "UUID": uM3}),
-    setvar("候选3", ao(uM3, "Matches")),
     A("list", {"WFItems": [
         {"WFItemType": 0, "WFValue": ts(var("候选2"))},
-        {"WFItemType": 0, "WFValue": ts(var("候选3"))},
         {"WFItemType": 0, "WFValue": ts(var("域名"))},
     ], "UUID": uList}),
     A("choosefromlist", {"WFInput": ta(ao(uList, "List")),
