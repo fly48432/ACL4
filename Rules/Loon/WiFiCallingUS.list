@@ -1,20 +1,24 @@
-# > T-Mobile US / Mint Mobile / Ultra Mobile / Google Fi on T-Mobile
-DOMAIN-SUFFIX,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 
 # > AT&T / Cricket / AT&T MVNO
 DOMAIN-SUFFIX,epdg.epc.mnc410.mcc310.pub.3gppnetwork.org
 
-# > Verizon / Visible / Xfinity Mobile / Spectrum Mobile
-DOMAIN-SUFFIX,epdg.epc.mnc480.mcc311.pub.3gppnetwork.org
 
-# > US Cellular
-DOMAIN-SUFFIX,epdg.epc.mnc580.mcc311.pub.3gppnetwork.org
+# SimHub VoWiFi - T-Mobile US / Ultra
+# Paste these lines into the [Rule] section of your Loon config.
 
-# > Dish Wireless / Boost Mobile
-DOMAIN-SUFFIX,epdg.epc.mnc340.mcc313.pub.3gppnetwork.org
-
-# > Sprint legacy
-DOMAIN-SUFFIX,epdg.epc.mnc120.mcc310.pub.3gppnetwork.org
-
-# > FirstNet
-DOMAIN-SUFFIX,epdg.epc.mnc100.mcc313.pub.3gppnetwork.org
+DOMAIN-SUFFIX,crl.t-mobile.com
+DOMAIN-SUFFIX,depdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,eas3.msg.t-mobile.com
+DOMAIN-SUFFIX,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN-SUFFIX,mascns.t-mobile.com
+DOMAIN-SUFFIX,ns.sipgeo.t-mobile.com
+DOMAIN-SUFFIX,optimizely.com
+DOMAIN-SUFFIX,redirect.ultra.me
+DOMAIN-SUFFIX,ultramobile.com
+DOMAIN-KEYWORD,t-mobile
+DOMAIN-KEYWORD,ultramobile
+IP-CIDR,206.29.177.36/32,no-resolve
+IP-CIDR,208.54.0.0/16,no-resolve
+IP-CIDR,66.94.0.0/19,no-resolve
