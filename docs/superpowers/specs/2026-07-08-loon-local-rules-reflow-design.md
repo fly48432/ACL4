@@ -63,8 +63,8 @@ iPhone Loon UI 加规则
 
 - **v1（本设计）**：手动触发。两种形态任选：
   - 对话式：让 Claude 按本文档执行一次回流；
-  - 脚本：`scripts/reflow_loon_rules.py --dry-run`（打印迁移计划）/ `--apply`（写入+同步+提交）。
-- **未来可选**：launchd 定时任务做 `--dry-run` 并在有漂移时通知（ntfy/系统通知），仍由人工确认后 apply；确认流程跑顺后再考虑全自动。
+  - 脚本：`scripts/reflow_loon_rules.py`（无参数=打印迁移计划的 dry-run）/ `--apply`（写入+同步+提交）/ `--apply --push`（并推送）。可选 `--lcf PATH` 指定配置路径。
+- **未来可选**：launchd 定时任务跑无参数（dry-run）并在有漂移时通知（ntfy/系统通知），仍由人工确认后 `--apply`；确认流程跑顺后再考虑全自动。
 
 ## 验收标准
 
@@ -73,10 +73,8 @@ iPhone Loon UI 加规则
 3. `IP-CIDR` 类本地规则只出现在报告中，文件未被改动。
 4. `default.lcf` 内容在整个流程前后逐字节一致。
 
-## 当前漂移快照（2026-07-08，待首次回流处理）
+## 回流历史
 
-| 本地规则 | 目标 |
-|---|---|
-| `DOMAIN-SUFFIX,pages.dev,节点选择` | `Proxy.list` |
-| `DOMAIN-SUFFIX,hstong.com,香港节点` | `HK.list` |
-| `DOMAIN-SUFFIX,push.apple.com,节点选择` | `Proxy.list` |
+首批漂移（`pages.dev`→Proxy、`hstong.com`→HK、`push.apple.com`→Proxy）已由 commit `0495542` 回流；`etnet.com.hk`→Direct 由 commit `1a6dbd4` 回流。当前漂移状态以 `python3 scripts/reflow_loon_rules.py`（dry-run）的实时输出为准，本文档不再维护静态快照。
+
+> 提醒：脚本按设计不改 `default.lcf`；回流后需在 Loon UI 手动删除对应本地规则，否则下次仍会作为「已存在，仅需删除」出现在计划里。
